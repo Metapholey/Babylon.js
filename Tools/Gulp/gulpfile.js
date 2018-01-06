@@ -420,6 +420,7 @@ var buildExternalLibrary = function (library, settings, watch) {
  * The default task, concat and min the main BJS files.
  */
 gulp.task("default", function (cb) {
+    //runSequence("typescript-all", "intellisense", "tests-validations", cb);
     runSequence("tests-validations", cb);
 });
 
@@ -601,12 +602,12 @@ gulp.task("tests-virtualscreen-ff", function (done) {
 });
 
 gulp.task("tests-validations", function (cb) {
-    // if (process.env.BROWSER_STACK_USERNAME) {
-    //     runSequence("tests-browserStack-ff-desktop", "tests-browserStack-ch-pixel", cb);
-    // }
-    // else {
+    if (process.env.BROWSER_STACK_USERNAME) {
+        runSequence("tests-browserStack-ff-desktop", "tests-browserStack-ch-pixel", cb);
+    }
+    else {
         runSequence("tests-virtualscreen-ff", cb);
-    //}
+    }
 });
 
 gulp.task("clean-JS-MAP", function () {
