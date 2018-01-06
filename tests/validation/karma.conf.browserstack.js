@@ -45,7 +45,8 @@ module.exports = function (config) {
             debug : 'true',
             timeout: 1200,
             startTunnel: false,
-            tunnelIdentifier: ENV['BROWSERSTACK_LOCAL_IDENTIFIER']
+            tunnelIdentifier: process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
+            build: process.env.TRAVIS_BUILD_NUMBER
             // username: '',
             // accessKey: '',
         },
