@@ -420,7 +420,7 @@ var buildExternalLibrary = function (library, settings, watch) {
  * The default task, concat and min the main BJS files.
  */
 gulp.task("default", function (cb) {
-    runSequence("typescript-all", "intellisense", "tests-browserStack", cb);
+    runSequence("typescript-all", "intellisense", "tests-validations", cb);
 });
 
 gulp.task("mainBuild", function (cb) {
@@ -590,8 +590,23 @@ gulp.task("tests-browserStack-ch-pixel", function (done) {
     server.start();
 });
 
-gulp.task("tests-browserStack", function (cb) {
-    runSequence("tests-browserStack-ff-desktop", "tests-browserStack-ch-pixel", cb);
+gulp.task("tests-virtualscreen-ff", function (done) {
+    var kamaServerOptions = {
+        configFile: __dirname + "/../../tests/validation/karma.conf.virtualscreen.ff.js",
+        singleRun: true
+    };
+
+    var server = new karmaServer(kamaServerOptions, done);
+    server.start();
+});
+
+gulp.task("tests-validations", function (cb) {
+    if (process.env.BROWSER_STACK_USERNAME) {
+        runSequence("tests-browserStack-ff-desktop", "tests-browserStack-ch-pixel", cb);
+    }
+    else {
+        runSequence("tests-virtualscreen-ff", cb);
+    }
 });
 
 gulp.task("clean-JS-MAP", function () {
