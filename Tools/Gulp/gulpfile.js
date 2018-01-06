@@ -570,19 +570,28 @@ gulp.task("tests-integration", function (done) {
     server.start();
 });
 
-gulp.task("tests-browserStack", function (done) {
-    if (!process.env.BROWSER_STACK_USERNAME) {
-        done();
-        return;
-    }
-
+gulp.task("tests-browserStack-ff-desktop", function (done) {
     var kamaServerOptions = {
-        configFile: __dirname + "/../../tests/validation/karma.conf.browserstack.js",
+        configFile: __dirname + "/../../tests/validation/karma.conf.browserstack.ff.desktop.js",
         singleRun: true
     };
 
     var server = new karmaServer(kamaServerOptions, done);
     server.start();
+});
+
+gulp.task("tests-browserStack-ch-pixel", function (done) {
+    var kamaServerOptions = {
+        configFile: __dirname + "/../../tests/validation/karma.conf.browserstack.ch.pixel.js",
+        singleRun: true
+    };
+
+    var server = new karmaServer(kamaServerOptions, done);
+    server.start();
+});
+
+gulp.task("tests-browserStack", function (cb) {
+    runSequence("tests-browserStack-ff-desktop", "tests-browserStack-ch-pixel", cb);
 });
 
 gulp.task("clean-JS-MAP", function () {
