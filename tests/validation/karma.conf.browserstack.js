@@ -44,11 +44,9 @@ module.exports = function (config) {
             video: false,
             debug : 'true',
             timeout: 1200,
-            startTunnel: false,
-            tunnelIdentifier: process.env.BROWSERSTACK_LOCAL_IDENTIFIER,
-            build: process.env.TRAVIS_BUILD_NUMBER
-            // username: '',
-            // accessKey: '',
+            build: process.env.TRAVIS_BUILD_NUMBER,
+            username: process.env.BROWSER_STACK_USERNAME,
+            accessKey: process.env.BROWSER_STACK_ACCESS_KEY
         },
         customLaunchers: {
             bs_chrome_win: {
