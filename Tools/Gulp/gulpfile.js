@@ -571,7 +571,7 @@ gulp.task("tests-integration", function (done) {
 });
 
 gulp.task("tests-browserStack", function (done) {
-    if (!process.env.BROWSERSTACK_LOCAL_IDENTIFIER) {
+    if (!process.env.BROWSER_STACK_USERNAME) {
         done();
         return;
     }
