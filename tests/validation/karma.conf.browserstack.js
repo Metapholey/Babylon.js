@@ -7,6 +7,7 @@ module.exports = function (config) {
         browserNoActivityTimeout: 3e5,
         browserDisconnectTimeout: 3e5,
         browserDisconnectTolerance: 3,
+        concurrency: 1,
 
         urlRoot: '/karma',
 
