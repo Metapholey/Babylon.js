@@ -2,10 +2,10 @@ language: node_js
 node_js:
 - '6'
 addons:
-  sauce_connect:
-    username: vandenberghe.sebastien@gmail.com
-  jwt:
-    secure: kbaJ3o6cVqpB8Gzfd0yDSgGwH+SQXukevtpjMQ8Gip+N6FOumQxihPDqsqYKxc8svvR024nDmkIhbjPjz/YguvC3WUgYW4xk3Za7P7C9cpj2fYdrFuO7pD4sd/fNdUCqvKQ8jcxlIq4eEdBuoBTOHsP9J5KH7Z1M7e58atkx0o8=
+  browserstack:
+    username: "sebastienvandenb1"
+    access_key:
+      secure: "iTG5wK7qLB7P4ggpYSdIsyf+aMFkPCqQPdGo6CLvhZ2KL3QQ41SsIEdHGEhlcszsAFWgEEx/5fRurT+2PMWFbub6VkZPhCZ5xI9D0KF4QXRNFGUkmGNrx5qSXHY5yLUCP9BJhxNPHN23ZuFpkMkWW+H46x1oS/Ay42ylzRVOtac="
 before_script:
 - npm install -g gulp
 - cd ./Tools/Gulp

@@ -43,7 +43,11 @@ module.exports = function (config) {
             project: 'Babylon JS Validation Tests',
             video: false,
             debug : 'true',
-            timeout: 900
+            timeout: 1200,
+            startTunnel: false,
+            tunnelIdentifier: ENV['BROWSERSTACK_LOCAL_IDENTIFIER']
+            // username: '',
+            // accessKey: '',
         },
         customLaunchers: {
             bs_chrome_win: {
