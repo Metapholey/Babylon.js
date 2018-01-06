@@ -3,9 +3,9 @@ node_js:
 - '6'
 addons:
   browserstack:
-    username: "sebastienvandenb1"
+    username: sebastienvandenb1
     access_key:
-      secure: "iTG5wK7qLB7P4ggpYSdIsyf+aMFkPCqQPdGo6CLvhZ2KL3QQ41SsIEdHGEhlcszsAFWgEEx/5fRurT+2PMWFbub6VkZPhCZ5xI9D0KF4QXRNFGUkmGNrx5qSXHY5yLUCP9BJhxNPHN23ZuFpkMkWW+H46x1oS/Ay42ylzRVOtac="
+      secure: iTG5wK7qLB7P4ggpYSdIsyf+aMFkPCqQPdGo6CLvhZ2KL3QQ41SsIEdHGEhlcszsAFWgEEx/5fRurT+2PMWFbub6VkZPhCZ5xI9D0KF4QXRNFGUkmGNrx5qSXHY5yLUCP9BJhxNPHN23ZuFpkMkWW+H46x1oS/Ay42ylzRVOtac=
 before_script:
 - npm install -g gulp
 - cd ./Tools/Gulp
@@ -14,3 +14,7 @@ script: gulp
 notifications:
   slack:
     secure: TBYDAN8Dlkx3dM+Q5ClAZem7agAhQ1oB/fGT665qn7D+j2YfWChvlfXegvXL4LPDmQgbI0UfazcjWId5a0EwmmPkRb+kMJItPiMt5jiIp2WKoZQ+qob6H9tBCRJbbpWM430wiPeKfBfbcZP/XSlpVMWhgU5ogAFDSUKjvHT7IuE=
+env:
+  global:
+  - secure: XVMhWPm3ByrZduLmbyBMsKU462bEbYPNRp+42HcdOuC3YOl2ODPvANrE/qZneZzGqlyiFAg6X4mDGD71Qw9ekbFt5q0PmvIxkRrX0KNJEJl9/gnFadOz3xFWEfFw4tiSHp36PUu9aT6ti9mn9gnM8C+vQZhqVpaMgkLpWzeEeXQ=
+  - secure: jaGc/NJwACWJPLfI/L1UfYvWKX6AGVjFwXA+31elOVNAmG4XRwaTUaugqP4FhjTw0g2pqTB1BlSML+Fs3dVaUGy3bpslQLL74iG06XZbFUqrtVV2/sOcJaoWxIc69ld0tcqLdPvMSrCIzGQYAWaNNllyMnBjsWBZ+0J0ghtbBDA=
